@@ -124,10 +124,10 @@ const FAQ = () => {
         <div className="container-custom">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Frequently Asked Questions
             </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Find answers to common questions about our platform, deals, and services. 
               Can't find what you're looking for? Contact our support team.
             </p>
@@ -142,7 +142,7 @@ const FAQ = () => {
                 placeholder="Search FAQ..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500"
+                className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500"
               />
             </div>
           </div>
@@ -157,7 +157,7 @@ const FAQ = () => {
                   className={`px-4 py-2 border rounded-full transition-colors duration-200 text-sm ${
                     selectedCategory === category
                       ? 'bg-primary-600 text-white border-primary-600'
-                      : 'bg-white border-gray-200 hover:border-primary-500 hover:text-primary-600'
+                      : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-primary-500 hover:text-primary-600'
                   }`}
                 >
                   {category}
@@ -169,16 +169,16 @@ const FAQ = () => {
           {/* FAQ List */}
           <div className="max-w-4xl mx-auto space-y-4">
             {filteredFaqs.map((faq) => (
-              <div key={faq.id} className="bg-white rounded-lg shadow-md border border-gray-200">
+              <div key={faq.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
                 <button
-                  className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                  className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
                   onClick={() => toggleFaq(faq.id)}
                 >
                   <div>
-                    <span className="text-xs font-medium text-primary-600 mb-1 block">
+                    <span className="text-xs font-medium text-primary-600 dark:text-primary-400 mb-1 block">
                       {faq.category}
                     </span>
-                    <h3 className="text-lg font-semibold text-gray-900">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                       {faq.question}
                     </h3>
                   </div>
@@ -191,8 +191,8 @@ const FAQ = () => {
                 
                 {openFaq === faq.id && (
                   <div className="px-6 pb-4">
-                    <div className="border-t border-gray-200 pt-4">
-                      <p className="text-gray-700 leading-relaxed">
+                    <div className="border-t border-gray-200 dark:border-gray-600 pt-4">
+                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                         {faq.answer}
                       </p>
                     </div>
@@ -204,7 +204,7 @@ const FAQ = () => {
 
           {filteredFaqs.length === 0 && (
             <div className="text-center py-12">
-              <p className="text-gray-500 text-lg">
+              <p className="text-gray-500 dark:text-gray-400 text-lg">
                 No FAQs found matching your search. Try a different keyword or browse all categories.
               </p>
             </div>

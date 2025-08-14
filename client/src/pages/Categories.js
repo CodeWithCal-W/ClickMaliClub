@@ -42,7 +42,7 @@ const Categories = () => {
                   <h1 className="text-4xl font-bold mb-4" style={{ color: category.color }}>
                     {category.name}
                   </h1>
-                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                     {category.description}
                   </p>
                 </div>
@@ -56,7 +56,7 @@ const Categories = () => {
             ) : (
               <div className="text-center py-12">
                 <h1 className="text-2xl font-bold text-red-500 mb-2">Category Not Found</h1>
-                <p className="text-gray-600">The category you're looking for doesn't exist.</p>
+                <p className="text-gray-600 dark:text-gray-300">The category you're looking for doesn't exist.</p>
               </div>
             )}
           </div>
@@ -78,8 +78,8 @@ const Categories = () => {
       <div className="min-h-screen py-16">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">All Categories</h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">All Categories</h1>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Explore our complete collection of affiliate marketing opportunities
             </p>
           </div>

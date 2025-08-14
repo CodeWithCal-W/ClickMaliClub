@@ -9,45 +9,45 @@ const TermsOfService = () => {
         <meta name="description" content="ClickMaliClub Terms of Service - Read our terms and conditions for using our affiliate marketing platform." />
       </Helmet>
       
-      <div className="min-h-screen py-16">
+      <div className="min-h-screen py-16 bg-gray-50 dark:bg-gray-900">
         <div className="container-custom max-w-4xl">
-          <div className="bg-white rounded-lg shadow-md p-8">
-            <h1 className="text-4xl font-bold text-gray-900 mb-6">
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
+            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">
               Terms of Service
             </h1>
             
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 dark:text-gray-400 mb-6">
               <strong>Last updated:</strong> August 14, 2025
             </p>
 
             <div className="prose prose-lg max-w-none">
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">1. Acceptance of Terms</h2>
-              <p className="text-gray-700 mb-4">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">1. Acceptance of Terms</h2>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 By accessing and using ClickMaliClub ("the Service"), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
               </p>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">2. Description of Service</h2>
-              <p className="text-gray-700 mb-4">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">2. Description of Service</h2>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 ClickMaliClub is an affiliate marketing platform that provides information about deals, offers, and opportunities across various industries including forex trading, cryptocurrency exchanges, betting sites, SaaS tools, and web hosting services. We connect users with partner platforms through affiliate links.
               </p>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">3. User Responsibilities</h2>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">3. User Responsibilities</h2>
               
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">3.1 Eligibility</h3>
-              <p className="text-gray-700 mb-4">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-3">3.1 Eligibility</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 You must be at least 18 years old to use our services. By using our platform, you represent and warrant that you meet this age requirement and have the legal capacity to enter into agreements.
               </p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">3.2 Accurate Information</h3>
-              <p className="text-gray-700 mb-4">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-3">3.2 Accurate Information</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 You agree to provide accurate, current, and complete information when using our services and to update such information to maintain its accuracy.
               </p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">3.3 Prohibited Uses</h3>
-              <p className="text-gray-700 mb-4">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-3">3.3 Prohibited Uses</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 You agree not to use our service:
               </p>
-              <ul className="list-disc pl-6 text-gray-700 mb-4">
+              <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 mb-4">
                 <li>For any unlawful purpose or to solicit others to perform unlawful acts</li>
                 <li>To violate any international, federal, provincial, or state regulations, rules, laws, or local ordinances</li>
                 <li>To infringe upon or violate our intellectual property rights or the intellectual property rights of others</li>

@@ -248,14 +248,14 @@ const Guides = () => {
         <meta name="description" content="Comprehensive guides and tutorials for forex trading, cryptocurrency, betting, SaaS tools, and more." />
       </Helmet>
       
-      <div className="min-h-screen py-16">
+      <div className="min-h-screen py-16 bg-white dark:bg-gray-900">
         <div className="container-custom">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Learning Guides
             </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Comprehensive guides and tutorials to help you succeed in forex trading, cryptocurrency, 
               betting, and more. Learn from experts and grow your knowledge.
             </p>
@@ -271,7 +271,7 @@ const Guides = () => {
                   className={`flex items-center space-x-2 px-4 py-2 border-2 rounded-lg transition-colors duration-200 ${
                     selectedCategory === category.slug
                       ? 'bg-primary-500 border-primary-500 text-white'
-                      : 'bg-white border-gray-200 hover:border-primary-500 hover:text-primary-600'
+                      : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-primary-500 hover:text-primary-600 text-gray-700 dark:text-gray-300'
                   }`}
                 >
                   <category.icon className="w-4 h-4" />

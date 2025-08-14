@@ -47,13 +47,13 @@ const Home = () => {
         </section>
 
         {/* Categories Preview */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-white dark:bg-gray-900 transition-colors duration-300">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
                 Popular Categories
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                 Explore our curated selection of affiliate opportunities across various industries
               </p>
             </div>
@@ -73,13 +73,13 @@ const Home = () => {
         </section>
 
         {/* Featured Deals */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
                 Featured Deals
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                 Don't miss out on these exclusive offers and limited-time deals
               </p>
             </div>

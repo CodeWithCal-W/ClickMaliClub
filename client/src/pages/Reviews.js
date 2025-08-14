@@ -112,14 +112,14 @@ const Reviews = () => {
         <meta name="description" content="Read honest reviews from our community about forex brokers, crypto exchanges, and other affiliate partners." />
       </Helmet>
       
-      <div className="min-h-screen py-16">
+      <div className="min-h-screen py-16 bg-white dark:bg-gray-900">
         <div className="container-custom">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Community Reviews
             </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-6">
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-6">
               Real reviews from our community members about their experiences with our recommended platforms and services.
             </p>
             <div className="flex items-center justify-center space-x-2">
@@ -127,12 +127,12 @@ const Reviews = () => {
                 {[...Array(5)].map((_, i) => (
                   <FiStar 
                     key={i} 
-                    className={`w-5 h-5 ${i < Math.floor(averageRating) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
+                    className={`w-5 h-5 ${i < Math.floor(averageRating) ? 'text-yellow-400 fill-current' : 'text-gray-300 dark:text-gray-600'}`} 
                   />
                 ))}
               </div>
-              <span className="text-lg font-semibold text-gray-900">{averageRating}</span>
-              <span className="text-gray-600">({reviews ? reviews.length : 0} reviews)</span>
+              <span className="text-lg font-semibold text-gray-900 dark:text-white">{averageRating}</span>
+              <span className="text-gray-600 dark:text-gray-400">({reviews ? reviews.length : 0} reviews)</span>
             </div>
           </div>
 
@@ -140,11 +140,11 @@ const Reviews = () => {
           {loading ? (
             <div className="text-center py-12">
               <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
-              <p className="mt-4 text-gray-600">Loading reviews...</p>
+              <p className="mt-4 text-gray-600 dark:text-gray-400">Loading reviews...</p>
             </div>
           ) : error ? (
             <div className="text-center py-12">
-              <p className="text-red-600 mb-4">{error}</p>
+              <p className="text-red-600 dark:text-red-400 mb-4">{error}</p>
               <button 
                 onClick={fetchReviews}
                 className="btn-primary"

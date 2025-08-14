@@ -9,41 +9,41 @@ const PrivacyPolicy = () => {
         <meta name="description" content="ClickMaliClub Privacy Policy - Learn how we collect, use, and protect your personal information." />
       </Helmet>
       
-      <div className="min-h-screen py-16">
+      <div className="min-h-screen py-16 bg-gray-50 dark:bg-gray-900">
         <div className="container-custom max-w-4xl">
-          <div className="bg-white rounded-lg shadow-md p-8">
-            <h1 className="text-4xl font-bold text-gray-900 mb-6">
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
+            <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">
               Privacy Policy
             </h1>
             
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 dark:text-gray-400 mb-6">
               <strong>Last updated:</strong> August 14, 2025
             </p>
 
             <div className="prose prose-lg max-w-none">
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">1. Introduction</h2>
-              <p className="text-gray-700 mb-4">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">1. Introduction</h2>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 ClickMaliClub ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website clickmaliclub.com and use our services.
               </p>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">2. Information We Collect</h2>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">2. Information We Collect</h2>
               
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">2.1 Personal Information</h3>
-              <p className="text-gray-700 mb-4">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-3">2.1 Personal Information</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 We may collect personal information that you voluntarily provide to us, including:
               </p>
-              <ul className="list-disc pl-6 text-gray-700 mb-4">
+              <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 mb-4">
                 <li>Email address (for newsletter subscription)</li>
                 <li>Name (if provided during contact or registration)</li>
                 <li>Contact information when you reach out to us</li>
                 <li>Preferences and interests related to our services</li>
               </ul>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">2.2 Automatically Collected Information</h3>
-              <p className="text-gray-700 mb-4">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-3">2.2 Automatically Collected Information</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 When you visit our website, we may automatically collect:
               </p>
-              <ul className="list-disc pl-6 text-gray-700 mb-4">
+              <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 mb-4">
                 <li>IP address and device information</li>
                 <li>Browser type and version</li>
                 <li>Pages visited and time spent on our site</li>
@@ -51,11 +51,11 @@ const PrivacyPolicy = () => {
                 <li>Cookies and similar tracking technologies</li>
               </ul>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">3. How We Use Your Information</h2>
-              <p className="text-gray-700 mb-4">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">3. How We Use Your Information</h2>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 We use the information we collect for the following purposes:
               </p>
-              <ul className="list-disc pl-6 text-gray-700 mb-4">
+              <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 mb-4">
                 <li>To provide and maintain our services</li>
                 <li>To send newsletter updates and promotional content (with your consent)</li>
                 <li>To respond to your inquiries and customer service requests</li>

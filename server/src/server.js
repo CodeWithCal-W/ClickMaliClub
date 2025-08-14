@@ -32,6 +32,9 @@ app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 // Logging middleware
 app.use(morgan('combined'));
 
+// Mongoose configuration to suppress warnings
+mongoose.set('strictQuery', false); // Prepare for Mongoose 7
+
 // Database connection
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/clickmaliclub', {
   useNewUrlParser: true,

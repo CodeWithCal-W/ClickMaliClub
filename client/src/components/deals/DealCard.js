@@ -40,7 +40,9 @@ const DealCard = ({ deal }) => {
   const expiryStatus = getExpiryStatus();
 
   return (
-    <div className="card hover:shadow-xl transition-all duration-300 group">
+    <div className="card hover:shadow-xl transition-all duration-300 group cursor-pointer"
+      onClick={handleClick}
+    >
       {/* Deal Image */}
       {deal.image && (
         <div className="relative h-48 overflow-hidden">
@@ -73,17 +75,17 @@ const DealCard = ({ deal }) => {
             {deal.category?.name || 'General'}
           </span>
         </div>        {/* Deal Title */}
-        <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
+        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
           {deal.title}
         </h3>
 
         {/* Deal Description */}
-        <p className="text-gray-600 mb-4 line-clamp-3">
+        <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
           {deal.description}
         </p>
 
         {/* Deal Stats */}
-        <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+        <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400 mb-4">
           <div className="flex items-center space-x-4">
             <span className="flex items-center">
               <FiTrendingUp className="w-4 h-4 mr-1" />
@@ -110,7 +112,7 @@ const DealCard = ({ deal }) => {
 
         {/* Terms */}
         {deal.terms && (
-          <p className="text-xs text-gray-400 mt-3 leading-relaxed">
+          <p className="text-xs text-gray-400 dark:text-gray-500 mt-3 leading-relaxed">
             {deal.terms}
           </p>
         )}

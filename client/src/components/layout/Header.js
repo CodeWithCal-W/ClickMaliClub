@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FiMenu, FiX, FiHome, FiList, FiTag, FiEdit, FiInfo, FiMail } from 'react-icons/fi';
 import logo from '../../assets/logo.png';
 import NewsletterModal from '../NewsletterModal';
+import ThemeToggle from '../ui/ThemeToggle';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,7 +28,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-white shadow-lg border-b border-gray-100 sticky top-0 z-50">
+    <header className="bg-white dark:bg-gray-900 shadow-lg border-b border-gray-100 dark:border-gray-800 sticky top-0 z-50 transition-colors duration-300">
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -46,7 +47,7 @@ const Header = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className="flex items-center space-x-1 text-gray-600 hover:text-primary-600 transition-colors duration-200 font-medium"
+                className="flex items-center space-x-1 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 font-medium"
               >
                 <item.icon className="w-4 h-4" />
                 <span>{item.label}</span>
@@ -54,8 +55,9 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
+          {/* CTA Button and Theme Toggle */}
           <div className="hidden md:flex items-center space-x-4">
+            <ThemeToggle />
             <button 
               onClick={openNewsletterModal}
               className="btn-primary"
@@ -67,7 +69,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden p-2 rounded-lg text-gray-600 hover:text-primary-600 hover:bg-gray-100 transition-colors duration-200"
+            className="md:hidden p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
           >
             {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
           </button>
@@ -75,19 +77,26 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-100">
+          <div className="md:hidden py-4 border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900">
             <nav className="flex flex-col space-y-2">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
                   onClick={() => setIsMenuOpen(false)}
-                  className="flex items-center space-x-2 p-3 rounded-lg text-gray-600 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200"
+                  className="flex items-center space-x-2 p-3 rounded-lg text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200"
                 >
                   <item.icon className="w-5 h-5" />
                   <span className="font-medium">{item.label}</span>
                 </Link>
               ))}
+              
+              {/* Mobile Theme Toggle */}
+              <div className="flex items-center justify-between p-3 border-t border-gray-200 dark:border-gray-700 mt-4">
+                <span className="text-gray-600 dark:text-gray-300 font-medium">Theme</span>
+                <ThemeToggle />
+              </div>
+              
               <button 
                 onClick={openNewsletterModal}
                 className="btn-primary mt-4 w-full"

@@ -1,0 +1,96 @@
+/* App.css - Main application styles */
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* Blog Content Styles */
+.blog-content {
+  line-height: 1.8;
+  color: #374151;
+}
+
+.blog-content h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 2rem 0 1rem 0;
+  color: #111827;
+}
+
+.blog-content h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1.5rem 0 1rem 0;
+  color: #111827;
+}
+
+.blog-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.75rem 0;
+  color: #111827;
+}
+
+.blog-content p {
+  margin: 1rem 0;
+  text-align: justify;
+}
+
+.blog-content ul,
+.blog-content ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.blog-content li {
+  margin: 0.5rem 0;
+}
+
+.blog-content blockquote {
+  border-left: 4px solid #3B82F6;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  background-color: #F8FAFC;
+  font-style: italic;
+}
+
+.blog-content code {
+  background-color: #F1F5F9;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+}
+
+.blog-content pre {
+  background-color: #1E293B;
+  color: #F1F5F9;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.blog-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.blog-content a {
+  color: #3B82F6;
+  text-decoration: underline;
+}
+
+.blog-content a:hover {
+  color: #2563EB;
+}
+
+/* We'll add more styles after setting up Tailwind */

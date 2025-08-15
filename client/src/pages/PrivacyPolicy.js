@@ -64,41 +64,41 @@ const PrivacyPolicy = () => {
                 <li>To comply with legal obligations</li>
               </ul>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">4. Information Sharing and Disclosure</h2>
-              <p className="text-gray-700 mb-4">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">4. Information Sharing and Disclosure</h2>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 We do not sell, trade, or rent your personal information to third parties. We may share your information in the following circumstances:
               </p>
-              <ul className="list-disc pl-6 text-gray-700 mb-4">
+              <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 mb-4">
                 <li><strong>Affiliate Partners:</strong> When you click on affiliate links, you may be redirected to partner websites that have their own privacy policies</li>
                 <li><strong>Service Providers:</strong> With trusted third-party service providers who assist us in operating our website</li>
                 <li><strong>Legal Requirements:</strong> When required by law or to protect our rights and safety</li>
                 <li><strong>Business Transfers:</strong> In connection with any merger, sale, or transfer of our business</li>
               </ul>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">5. Cookies and Tracking Technologies</h2>
-              <p className="text-gray-700 mb-4">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">5. Cookies and Tracking Technologies</h2>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 We use cookies and similar technologies to:
               </p>
-              <ul className="list-disc pl-6 text-gray-700 mb-4">
+              <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 mb-4">
                 <li>Remember your preferences and settings</li>
                 <li>Analyze website performance and usage</li>
                 <li>Track affiliate link clicks and referrals</li>
                 <li>Provide personalized content and advertisements</li>
               </ul>
-              <p className="text-gray-700 mb-4">
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 You can control cookies through your browser settings, but disabling cookies may affect website functionality.
               </p>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">6. Data Security</h2>
-              <p className="text-gray-700 mb-4">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">6. Data Security</h2>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no internet transmission is 100% secure, and we cannot guarantee absolute security.
               </p>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">7. Your Rights and Choices</h2>
-              <p className="text-gray-700 mb-4">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">7. Your Rights and Choices</h2>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 You have the following rights regarding your personal information:
               </p>
-              <ul className="list-disc pl-6 text-gray-700 mb-4">
+              <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 mb-4">
                 <li><strong>Access:</strong> Request access to your personal information</li>
                 <li><strong>Correction:</strong> Request correction of inaccurate information</li>
                 <li><strong>Deletion:</strong> Request deletion of your personal information</li>
@@ -106,33 +106,33 @@ const PrivacyPolicy = () => {
                 <li><strong>Data Portability:</strong> Request a copy of your data in a structured format</li>
               </ul>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">8. Third-Party Links</h2>
-              <p className="text-gray-700 mb-4">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">8. Third-Party Links</h2>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 Our website contains links to third-party websites and services. We are not responsible for the privacy practices of these external sites. We encourage you to review their privacy policies before providing any personal information.
               </p>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">9. Children's Privacy</h2>
-              <p className="text-gray-700 mb-4">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">9. Children's Privacy</h2>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 Our services are not intended for individuals under the age of 18. We do not knowingly collect personal information from children under 18. If we become aware of such collection, we will take steps to delete the information.
               </p>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">10. International Transfers</h2>
-              <p className="text-gray-700 mb-4">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">10. International Transfers</h2>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 Your information may be transferred to and processed in countries other than your country of residence. We ensure appropriate safeguards are in place to protect your personal information during such transfers.
               </p>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">11. Changes to This Privacy Policy</h2>
-              <p className="text-gray-700 mb-4">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">11. Changes to This Privacy Policy</h2>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the new Privacy Policy on this page and updating the "Last updated" date.
               </p>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">12. Contact Us</h2>
-              <p className="text-gray-700 mb-4">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mt-8 mb-4">12. Contact Us</h2>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
                 If you have any questions about this Privacy Policy or our data practices, please contact us:
               </p>
-              <ul className="list-none text-gray-700 mb-4">
+              <ul className="list-none text-gray-700 dark:text-gray-300 mb-4">
                 <li><strong>Email:</strong> clickmaliclub@gmail.com</li>
-                <li><strong>Website:</strong> <a href="/contact" className="text-primary-600 hover:text-primary-700">Contact Form</a></li>
+                <li><strong>Website:</strong> <a href="/contact" className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300">Contact Form</a></li>
               </ul>
             </div>
           </div>

@@ -132,7 +132,7 @@ const Blog = () => {
                           {post.tags.slice(0, 3).map((tag) => (
                             <span 
                               key={tag} 
-                              className="inline-flex items-center space-x-1 text-xs bg-primary-100 text-primary-700 px-2 py-1 rounded-full"
+                              className="inline-flex items-center space-x-1 text-xs bg-primary-100 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 px-2 py-1 rounded-full"
                             >
                               <FiTag size={10} />
                               <span>{tag}</span>
@@ -142,7 +142,7 @@ const Blog = () => {
                         
                         <Link 
                           to={`/blog/${post.slug}`}
-                          className="text-primary-600 hover:text-primary-700 font-medium text-sm transition-colors"
+                          className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium text-sm transition-colors"
                         >
                           Read More →
                         </Link>
@@ -194,7 +194,7 @@ const Blog = () => {
                       
                       <Link 
                         to={`/blog/${post.slug}`}
-                        className="text-primary-600 hover:text-primary-700 font-medium text-sm transition-colors"
+                        className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium text-sm transition-colors"
                       >
                         Read →
                       </Link>
@@ -208,8 +208,8 @@ const Blog = () => {
           {/* Empty State */}
           {posts.length === 0 && !loading && !error && (
             <div className="text-center py-12">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">No blog posts yet</h3>
-              <p className="text-gray-600">Check back soon for exciting content!</p>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">No blog posts yet</h3>
+              <p className="text-gray-600 dark:text-gray-300">Check back soon for exciting content!</p>
             </div>
           )}
         </div>

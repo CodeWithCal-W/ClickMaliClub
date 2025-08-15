@@ -284,32 +284,32 @@ const Guides = () => {
           {/* Guides Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredGuides.map((guide) => (
-              <div key={guide.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+              <div key={guide.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
                 {/* Guide Header */}
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center space-x-2">
-                      <guide.icon className="w-6 h-6 text-primary-600" />
-                      <span className="text-sm font-medium text-primary-600">{guide.category}</span>
+                      <guide.icon className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+                      <span className="text-sm font-medium text-primary-600 dark:text-primary-400">{guide.category}</span>
                     </div>
                     <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                      guide.difficulty === 'Beginner' ? 'bg-green-100 text-green-800' :
-                      guide.difficulty === 'Intermediate' ? 'bg-yellow-100 text-yellow-800' :
-                      'bg-red-100 text-red-800'
+                      guide.difficulty === 'Beginner' ? 'bg-green-100 dark:bg-green-900/20 text-green-800 dark:text-green-300' :
+                      guide.difficulty === 'Intermediate' ? 'bg-yellow-100 dark:bg-yellow-900/20 text-yellow-800 dark:text-yellow-300' :
+                      'bg-red-100 dark:bg-red-900/20 text-red-800 dark:text-red-300'
                     }`}>
                       {guide.difficulty}
                     </span>
                   </div>
                   
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 line-clamp-2">
                     {guide.title}
                   </h3>
                   
-                  <p className="text-gray-600 mb-4 line-clamp-3">
+                  <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
                     {guide.excerpt}
                   </p>
 
-                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                  <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400 mb-4">
                     <div className="flex items-center space-x-1">
                       <FiClock className="w-4 h-4" />
                       <span>{guide.readTime}</span>
@@ -323,11 +323,11 @@ const Guides = () => {
 
                 {/* Content Preview */}
                 <div className="px-6 pb-4">
-                  <h4 className="text-sm font-semibold text-gray-900 mb-2">What You'll Learn:</h4>
-                  <ul className="text-sm text-gray-600 space-y-1">
+                  <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2">What You'll Learn:</h4>
+                  <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
                     {(expandedTopics[guide.id] ? guide.content : guide.content.slice(0, 4)).map((item, index) => (
                       <li key={index} className="flex items-start">
-                        <span className="w-1.5 h-1.5 bg-primary-500 rounded-full mt-2 mr-2 flex-shrink-0"></span>
+                        <span className="w-1.5 h-1.5 bg-primary-500 dark:bg-primary-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
                         {item}
                       </li>
                     ))}
@@ -335,7 +335,7 @@ const Guides = () => {
                       <li>
                         <button
                           onClick={() => toggleTopics(guide.id)}
-                          className="text-primary-600 font-medium hover:text-primary-800 flex items-center space-x-1 transition-colors"
+                          className="text-primary-600 dark:text-primary-400 font-medium hover:text-primary-800 dark:hover:text-primary-300 flex items-center space-x-1 transition-colors"
                         >
                           {expandedTopics[guide.id] ? (
                             <>
@@ -355,7 +355,7 @@ const Guides = () => {
                 </div>
 
                 {/* Footer */}
-                <div className="px-6 py-4 bg-gray-50 border-t">
+                <div className="px-6 py-4 bg-gray-50 dark:bg-gray-700 border-t dark:border-gray-600">
                   <button 
                     onClick={() => openFullGuide(guide)}
                     className="w-full btn-primary text-sm"
@@ -368,11 +368,11 @@ const Guides = () => {
           </div>
 
           {/* Call to Action */}
-          <div className="text-center mt-12 p-8 bg-gradient-to-r from-primary-50 to-accent-50 rounded-lg">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+          <div className="text-center mt-12 p-8 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 rounded-lg">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
               Need a Specific Guide?
             </h2>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 dark:text-gray-300 mb-6">
               Can't find what you're looking for? Let us know what topic you'd like us to cover next.
             </p>
             <Link to="/contact" className="btn-primary">
@@ -385,13 +385,13 @@ const Guides = () => {
       {/* Full Guide Modal */}
       {selectedGuide && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="flex items-center justify-between p-6 border-b sticky top-0 bg-white">
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="flex items-center justify-between p-6 border-b dark:border-gray-700 sticky top-0 bg-white dark:bg-gray-800">
               <div className="flex items-center space-x-3">
-                <selectedGuide.icon className="w-6 h-6 text-primary-600" />
+                <selectedGuide.icon className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                 <div>
-                  <h2 className="text-xl font-semibold text-gray-900">{selectedGuide.title}</h2>
-                  <div className="flex items-center space-x-4 text-sm text-gray-500">
+                  <h2 className="text-xl font-semibold text-gray-900 dark:text-white">{selectedGuide.title}</h2>
+                  <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
                     <span>{selectedGuide.readTime}</span>
                     <span>{selectedGuide.difficulty}</span>
                     <span>By {selectedGuide.author}</span>
@@ -400,7 +400,7 @@ const Guides = () => {
               </div>
               <button
                 onClick={closeFullGuide}
-                className="text-gray-400 hover:text-gray-600"
+                className="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300"
               >
                 <FiX className="w-6 h-6" />
               </button>
@@ -410,24 +410,24 @@ const Guides = () => {
               {selectedGuide.fullContent ? (
                 <>
                   <div className="prose max-w-none">
-                    <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                    <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
                       {selectedGuide.fullContent.introduction}
                     </p>
                     
                     {selectedGuide.fullContent.sections.map((section, index) => (
                       <div key={index} className="mb-6">
-                        <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
                           {section.title}
                         </h3>
-                        <p className="text-gray-700 leading-relaxed">
+                        <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                           {section.content}
                         </p>
                       </div>
                     ))}
                     
-                    <div className="mt-8 p-4 bg-primary-50 rounded-lg">
-                      <h4 className="font-semibold text-primary-900 mb-2">Conclusion</h4>
-                      <p className="text-primary-800">
+                    <div className="mt-8 p-4 bg-primary-50 dark:bg-primary-900/20 rounded-lg">
+                      <h4 className="font-semibold text-primary-900 dark:text-primary-100 mb-2">Conclusion</h4>
+                      <p className="text-primary-800 dark:text-primary-200">
                         {selectedGuide.fullContent.conclusion}
                       </p>
                     </div>
@@ -441,10 +441,10 @@ const Guides = () => {
                 </>
               ) : (
                 <div className="text-center py-8">
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">
                     This guide is currently being updated with more detailed content.
                   </p>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
                     Check back soon for the complete guide!
                   </p>
                 </div>

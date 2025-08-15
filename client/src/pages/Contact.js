@@ -124,8 +124,8 @@ const Contact = () => {
                   {responseMessage.text && (
                     <div className={`mb-6 p-4 rounded-lg ${
                       responseMessage.type === 'success' 
-                        ? 'bg-green-50 text-green-700 border border-green-200' 
-                        : 'bg-red-50 text-red-700 border border-red-200'
+                        ? 'bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 border border-green-200 dark:border-green-700' 
+                        : 'bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-700'
                     }`}>
                       {responseMessage.text}
                     </div>
@@ -201,7 +201,7 @@ const Contact = () => {
                           rows={6}
                           value={formData.message}
                           onChange={handleChange}
-                          className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"
+                          className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"
                           placeholder="Tell us how we can help..."
                         />
                       </div>
@@ -230,27 +230,27 @@ const Contact = () => {
 
               {/* Contact Info */}
               <div className="space-y-8">
-                <div className="bg-white rounded-lg shadow-lg p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-6">Contact Information</h3>
+                <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">Contact Information</h3>
                   <div className="space-y-6">
                     {contactInfo.map((info, index) => (
                       <div key={index} className="flex items-start space-x-4">
-                        <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <info.icon className="text-primary-600" size={20} />
+                        <div className="w-10 h-10 bg-primary-100 dark:bg-primary-900/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <info.icon className="text-primary-600 dark:text-primary-400" size={20} />
                         </div>
                         <div>
-                          <h4 className="font-semibold text-gray-900">{info.title}</h4>
-                          <p className="text-primary-600 font-medium">{info.details}</p>
-                          <p className="text-gray-600 text-sm">{info.description}</p>
+                          <h4 className="font-semibold text-gray-900 dark:text-white">{info.title}</h4>
+                          <p className="text-primary-600 dark:text-primary-400 font-medium">{info.details}</p>
+                          <p className="text-gray-600 dark:text-gray-300 text-sm">{info.description}</p>
                         </div>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="bg-primary-50 rounded-lg p-6">
-                  <h3 className="text-lg font-bold text-gray-900 mb-3">Quick Response</h3>
-                  <p className="text-gray-600 text-sm">
+                <div className="bg-primary-50 dark:bg-primary-900/20 rounded-lg p-6">
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">Quick Response</h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">
                     For urgent matters or deal-related questions, we typically respond within a few hours during business days.
                   </p>
                 </div>
@@ -260,24 +260,24 @@ const Contact = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-white dark:bg-gray-900">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
                 Frequently Asked Questions
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                 Find quick answers to common questions about ClickMaliClub and our services.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-gray-50 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                <div key={index} className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                     {faq.question}
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 dark:text-gray-300">
                     {faq.answer}
                   </p>
                 </div>

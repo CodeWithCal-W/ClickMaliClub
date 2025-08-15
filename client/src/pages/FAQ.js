@@ -211,12 +211,12 @@ const FAQ = () => {
           )}
 
           {/* Contact Section */}
-          <div className="text-center mt-16 p-8 bg-gradient-to-r from-primary-50 to-accent-50 rounded-lg">
-            <FiMessageCircle className="w-12 h-12 text-primary-600 mx-auto mb-4" />
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+          <div className="text-center mt-16 p-8 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 rounded-lg">
+            <FiMessageCircle className="w-12 h-12 text-primary-600 dark:text-primary-400 mx-auto mb-4" />
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
               Still Have Questions?
             </h2>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 dark:text-gray-300 mb-6">
               Our support team is here to help. Get in touch and we'll respond as soon as possible.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

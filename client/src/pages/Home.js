@@ -99,12 +99,12 @@ const Home = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-gray-50 dark:bg-gray-800">
           <div className="container-custom text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Ready to Start Earning?
             </h2>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
               Join thousands of marketers who trust ClickMaliClub for their affiliate marketing needs.
             </p>
             <Link to="/deals" className="btn-primary text-lg px-8 py-4 inline-block text-center">

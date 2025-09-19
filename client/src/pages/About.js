@@ -3,42 +3,45 @@ import { Helmet } from 'react-helmet-async';
 import { FiTarget, FiUsers, FiTrendingUp, FiShield, FiHeart, FiAward } from 'react-icons/fi';
 
 const About = () => {
+  const stats = [
+    { number: '25K+', label: 'Monthly Visitors' },
+    { number: '150+', label: 'Platforms Reviewed' },
+    { number: '4.9★', label: 'Average Rating' },
+    { number: '24/7', label: 'Community Support' }
+  ];
+
   const features = [
     {
       icon: FiTarget,
-      title: 'Expert Curation',
-      description: 'Our team carefully reviews and selects only the best deals and platforms to ensure you get maximum value.'
+      title: 'Thorough Research',
+      description: 'Every platform is personally tested and analyzed. We spend weeks evaluating features, security, and user experience before making recommendations.'
     },
     {
       icon: FiShield,
-      title: 'Trusted Partners',
-      description: 'We work exclusively with licensed, regulated, and reputable companies to protect your interests.'
+      title: 'Verified Partners',
+      description: 'We only partner with licensed, regulated, and reputable companies. Your safety and security are our top priorities.'
     },
     {
       icon: FiTrendingUp,
-      title: 'Real-Time Updates',
-      description: 'Stay ahead with the latest deals, market insights, and trending opportunities in your favorite niches.'
+      title: 'Exclusive Bonuses',
+      description: 'Access special welcome bonuses, reduced fees, and promotional offers available only through our trusted partner relationships.'
     },
     {
       icon: FiUsers,
-      title: 'Community Driven',
-      description: 'Join thousands of traders, entrepreneurs, and deal-seekers who trust ClickMaliClub for their needs.'
+      title: 'Honest Reviews',
+      description: 'No sugar-coating here. We share real pros and cons, helping you make informed decisions based on facts, not hype.'
     }
-  ];
-
-  const stats = [
-    { number: '50,000+', label: 'Active Users' },
-    { number: '500+', label: 'Verified Deals' },
-    { number: '99.9%', label: 'Uptime' },
-    { number: '24/7', label: 'Support' }
   ];
 
   return (
     <>
       <Helmet>
-        <title>About Us - ClickMaliClub</title>
-        <meta name="description" content="Learn about ClickMaliClub's mission to connect users with the best deals in forex, crypto, betting, SaaS, and hosting" />
-        <meta name="keywords" content="about clickmaliclub, affiliate marketing, forex deals, crypto deals, betting offers" />
+        <title>About ClickMaliClub - Your Trusted Platform Recommendation Hub | Expert Reviews</title>
+        <meta name="description" content="Discover ClickMaliClub's mission: connecting you with the best forex brokers, crypto exchanges, betting sites, SaaS tools, web hosting, education platforms, prop firms & business resources." />
+        <meta name="keywords" content="about clickmaliclub, platform reviews, forex broker reviews, crypto exchange reviews, SaaS recommendations, web hosting reviews, prop trading firms, business outsourcing" />
+        <meta property="og:title" content="About ClickMaliClub - Expert Platform Recommendations" />
+        <meta property="og:description" content="Learn how ClickMaliClub curates the best digital platforms with honest reviews and exclusive bonuses." />
+        <link rel="canonical" href="https://clickmaliclub.com/about" />
       </Helmet>
       
       <div className="min-h-screen">
@@ -48,13 +51,11 @@ const About = () => {
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               About ClickMaliClub
             </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
-              Your trusted partner for discovering the best deals and opportunities 
-              in forex trading, cryptocurrency, sports betting, SaaS tools, and web hosting.
+            <p className="text-xl md:text-2xl mb-8 max-w-5xl mx-auto opacity-90">
+              Your trusted guide to discovering premium forex brokers, crypto exchanges, betting platforms, SaaS tools, web hosting providers, online education platforms, prop trading firms, and business outsourcing resources with honest reviews and exclusive welcome bonuses.
             </p>
-            <div className="flex items-center justify-center space-x-2">
-              <FiHeart className="text-red-300" size={24} />
-              <span className="text-lg">Built with passion for your success</span>
+            <div className="flex items-center justify-center space-x-2">   
+              <span className="text-lg">We are here to help you succeed online!</span>
             </div>
           </div>
         </section>
@@ -65,22 +66,23 @@ const About = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-                  Our Mission
+                  Our Mission: Simplifying Your Platform Selection
                 </h2>
                 <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-                  At ClickMaliClub, we believe everyone deserves access to the best deals and opportunities 
-                  in the digital world. Our mission is to bridge the gap between quality service providers 
-                  and smart consumers looking for value.
+                  At ClickMaliClub, we understand how overwhelming it can be to choose the right online platform. 
+                  With thousands of forex brokers, crypto exchanges, betting sites, SaaS tools, web hosting providers, 
+                  online education platforms, prop trading firms, and business outsourcing services available, making the wrong choice 
+                  can cost you time, money, and opportunities.
                 </p>
                 <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-                  We meticulously research, test, and verify every deal we feature, ensuring you save time, 
-                  money, and make informed decisions. Whether you're a beginner trader, seasoned investor, 
-                  or business owner, we've got you covered.
+                  That's why we personally test, review, and curate only the <strong>best platforms</strong> across all 8 categories we focus on. 
+                  Every recommendation comes with honest insights, pros and cons, and exclusive bonuses you won't find elsewhere. 
+                  We're not just another review site - we're your trusted advisors in the digital world.
                 </p>
                 <div className="flex items-center space-x-4">
                   <FiAward className="text-primary-600 dark:text-primary-400 flex-shrink-0" size={24} />
                   <span className="text-gray-700 dark:text-gray-300 font-medium">
-                    Trusted by over 50,000 users worldwide
+                    Helping digital entrepreneurs since 2025
                   </span>
                 </div>
               </div>

@@ -20,7 +20,7 @@ const guideSchema = new mongoose.Schema({
   category: {
     type: String,
     required: true,
-    enum: ['Forex Trading', 'Crypto Exchange', 'Betting Sites', 'SaaS Tools', 'Web Hosting', 'Affiliate Marketing']
+    enum: ['Forex Trading', 'Crypto Exchange', 'Betting Sites', 'SaaS Tools', 'Web Hosting', 'Online Education', 'Prop Firms', 'Business Resources & Outsourcing']
   },
   difficulty: {
     type: String,

@@ -1,31 +1,38 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { apiService } from '../services/api';
 
-// Generic data fetching hook
+// Generic data fetching hook with improved error handling
 export const useApi = (apiFunction, dependencies = []) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-        const result = await apiFunction();
-        setData(result);
-      } catch (err) {
-        setError(err);
-        console.error('API Error:', err);
-      } finally {
-        setLoading(false);
+  const fetchData = useCallback(async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const result = await apiFunction();
+      setData(result);
+    } catch (err) {
+      setError(err);
+      console.error('API Error:', err);
+      
+      // If it's a 400 error (bad request), don't retry
+      if (err.response?.status === 400 || err.status === 400) {
+        console.warn('Bad request detected:', err.message || err.response?.data?.message);
       }
-    };
+      
+      // Keep previous data on error to prevent blank screen
+    } finally {
+      setLoading(false);
+    }
+  }, [apiFunction]);
 
+  useEffect(() => {
     fetchData();
   }, dependencies);
 
-  return { data, loading, error, refetch: () => fetchData() };
+  return { data, loading, error, refetch: fetchData };
 };
 
 // Specific hooks for different data types

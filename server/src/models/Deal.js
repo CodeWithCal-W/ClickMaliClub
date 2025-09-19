@@ -168,6 +168,11 @@ dealSchema.index({ 'availability.endDate': 1 });
 dealSchema.index({ priority: -1 });
 dealSchema.index({ createdAt: -1 });
 
+// Compound indexes for better query performance
+dealSchema.index({ status: 1, category: 1 });
+dealSchema.index({ status: 1, isFeatured: -1, priority: -1, createdAt: -1 });
+dealSchema.index({ category: 1, status: 1, isFeatured: -1 });
+
 // Virtual for click-through rate calculation
 dealSchema.virtual('clickThroughRate').get(function() {
   return this.analytics.views > 0 ? (this.analytics.clicks / this.analytics.views * 100).toFixed(2) : 0;

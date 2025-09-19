@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { FiMail, FiUser, FiCheck, FiX } from 'react-icons/fi';
+import { useTheme } from '../contexts/ThemeContext';
 
 const NewsletterModal = ({ isOpen, onClose }) => {
+  const { theme } = useTheme();
   const [formData, setFormData] = useState({
     email: '',
     name: '',
@@ -19,12 +21,21 @@ const NewsletterModal = ({ isOpen, onClose }) => {
     setMessage({ type: '', text: '' });
 
     try {
-      const response = await fetch('http://localhost:5000/api/newsletter/subscribe', {
+      // Format data to match backend expectations
+      const submitData = {
+        email: formData.email,
+        fullName: formData.name,
+        interests: formData.preferences.categories,
+        frequency: formData.preferences.frequency
+      };
+
+      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+      const response = await fetch(`${apiUrl}/newsletter/subscribe`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(submitData),
       });
 
       const data = await response.json();
@@ -69,14 +80,24 @@ const NewsletterModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-lg max-w-md w-full max-h-[90vh] overflow-y-auto">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4" style={{ zIndex: 99999 }}>
+      <div className={`rounded-lg max-w-md w-full max-h-[90vh] overflow-y-auto ${
+        theme === 'dark' ? 'bg-gray-800' : 'bg-white'
+      }`}>
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-gray-200">
-          <h3 className="text-xl font-bold text-gray-900">Join Our Newsletter</h3>
+        <div className={`flex items-center justify-between p-6 border-b ${
+          theme === 'dark' ? 'border-gray-700' : 'border-gray-200'
+        }`}>
+          <h3 className={`text-xl font-bold ${
+            theme === 'dark' ? 'text-white' : 'text-gray-900'
+          }`}>Join Our Newsletter</h3>
           <button
             onClick={onClose}
-            className="text-gray-400 hover:text-gray-600 transition-colors"
+            className={`transition-colors ${
+              theme === 'dark' 
+                ? 'text-gray-400 hover:text-gray-200' 
+                : 'text-gray-400 hover:text-gray-600'
+            }`}
           >
             <FiX size={24} />
           </button>
@@ -84,7 +105,9 @@ const NewsletterModal = ({ isOpen, onClose }) => {
 
         {/* Content */}
         <div className="p-6">
-          <p className="text-gray-600 mb-6">
+          <p className={`mb-6 ${
+            theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+          }`}>
             Get exclusive deals, trading insights, and expert tips delivered to your inbox!
           </p>
 
@@ -92,8 +115,12 @@ const NewsletterModal = ({ isOpen, onClose }) => {
           {message.text && (
             <div className={`mb-4 p-3 rounded-lg flex items-center space-x-2 ${
               message.type === 'success' 
-                ? 'bg-green-50 text-green-700 border border-green-200' 
-                : 'bg-red-50 text-red-700 border border-red-200'
+                ? theme === 'dark'
+                  ? 'bg-green-900 text-green-200 border border-green-700'
+                  : 'bg-green-50 text-green-700 border border-green-200'
+                : theme === 'dark'
+                  ? 'bg-red-900 text-red-200 border border-red-700'
+                  : 'bg-red-50 text-red-700 border border-red-200'
             }`}>
               {message.type === 'success' ? <FiCheck size={16} /> : <FiX size={16} />}
               <span className="text-sm">{message.text}</span>
@@ -103,18 +130,26 @@ const NewsletterModal = ({ isOpen, onClose }) => {
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Email Field */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="email" className={`block text-sm font-medium mb-1 ${
+                theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
+              }`}>
                 Email Address *
               </label>
               <div className="relative">
-                <FiMail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={16} />
+                <FiMail className={`absolute left-3 top-1/2 transform -translate-y-1/2 ${
+                  theme === 'dark' ? 'text-gray-500' : 'text-gray-400'
+                }`} size={16} />
                 <input
                   type="email"
                   id="email"
                   required
                   value={formData.email}
                   onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className={`w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
+                    theme === 'dark' 
+                      ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
+                      : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500'
+                  }`}
                   placeholder="your@email.com"
                 />
               </div>
@@ -122,17 +157,25 @@ const NewsletterModal = ({ isOpen, onClose }) => {
 
             {/* Name Field */}
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="name" className={`block text-sm font-medium mb-1 ${
+                theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
+              }`}>
                 Full Name (Optional)
               </label>
               <div className="relative">
-                <FiUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={16} />
+                <FiUser className={`absolute left-3 top-1/2 transform -translate-y-1/2 ${
+                  theme === 'dark' ? 'text-gray-500' : 'text-gray-400'
+                }`} size={16} />
                 <input
                   type="text"
                   id="name"
                   value={formData.name}
                   onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className={`w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
+                    theme === 'dark' 
+                      ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' 
+                      : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500'
+                  }`}
                   placeholder="Your Name"
                 />
               </div>
@@ -140,7 +183,9 @@ const NewsletterModal = ({ isOpen, onClose }) => {
 
             {/* Interests */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className={`block text-sm font-medium mb-2 ${
+                theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
+              }`}>
                 Interests (Select all that apply)
               </label>
               <div className="grid grid-cols-2 gap-2">
@@ -157,9 +202,15 @@ const NewsletterModal = ({ isOpen, onClose }) => {
                       type="checkbox"
                       checked={formData.preferences.categories.includes(category.id)}
                       onChange={() => handleCategoryChange(category.id)}
-                      className="w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
+                      className={`w-4 h-4 text-primary-600 rounded focus:ring-primary-500 ${
+                        theme === 'dark' 
+                          ? 'border-gray-600 bg-gray-700' 
+                          : 'border-gray-300 bg-white'
+                      }`}
                     />
-                    <span className="text-sm text-gray-700">{category.label}</span>
+                    <span className={`text-sm ${
+                      theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
+                    }`}>{category.label}</span>
                   </label>
                 ))}
               </div>
@@ -167,7 +218,9 @@ const NewsletterModal = ({ isOpen, onClose }) => {
 
             {/* Frequency */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className={`block text-sm font-medium mb-2 ${
+                theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
+              }`}>
                 Email Frequency
               </label>
               <select
@@ -179,7 +232,11 @@ const NewsletterModal = ({ isOpen, onClose }) => {
                     frequency: e.target.value
                   }
                 }))}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
+                  theme === 'dark' 
+                    ? 'bg-gray-700 border-gray-600 text-white' 
+                    : 'bg-white border-gray-300 text-gray-900'
+                }`}
               >
                 <option value="daily">Daily Updates</option>
                 <option value="weekly">Weekly Digest</option>

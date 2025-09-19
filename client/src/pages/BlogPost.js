@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { FiCalendar, FiUser, FiClock, FiTag, FiArrowLeft, FiShare2 } from 'react-icons/fi';
+import { apiService } from '../services/api';
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -15,13 +16,12 @@ const BlogPost = () => {
     const fetchPost = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`http://localhost:5000/api/blog/${slug}`);
-        const data = await response.json();
+        const response = await apiService.getBlogPost(slug);
         
-        if (data.success) {
-          setPost(data.data);
+        if (response.success) {
+          setPost(response.data);
           // Fetch related posts
-          fetchRelatedPosts(data.data.category);
+          fetchRelatedPosts(response.data.category);
         } else {
           setError('Blog post not found');
         }
@@ -35,11 +35,10 @@ const BlogPost = () => {
 
     const fetchRelatedPosts = async (category) => {
       try {
-        const response = await fetch(`http://localhost:5000/api/blog?category=${category}&limit=3`);
-        const data = await response.json();
+        const response = await apiService.getBlogPosts({ category, limit: 3 });
         
-        if (data.success) {
-          setRelatedPosts(data.data.filter(p => p.slug !== slug));
+        if (response.success) {
+          setRelatedPosts(response.data.filter(p => p.slug !== slug));
         }
       } catch (err) {
         console.error('Error fetching related posts:', err);

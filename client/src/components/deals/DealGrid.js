@@ -20,7 +20,8 @@ const DealGrid = ({ deals, loading, error }) => {
     );
   }
 
-  if (error) {
+  // Only show error if there are no deals to display (not just any error)
+  if (error && (!deals || deals.length === 0)) {
     return (
       <div className="text-center py-12">
         <div className="text-red-500 text-lg font-semibold mb-2">

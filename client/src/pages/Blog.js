@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { FiCalendar, FiUser, FiClock, FiTag } from 'react-icons/fi';
+import { apiService } from '../services/api';
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);
@@ -12,11 +13,10 @@ const Blog = () => {
     const fetchPosts = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:5000/api/blog');
-        const data = await response.json();
+        const response = await apiService.getBlogPosts();
         
-        if (data.success) {
-          setPosts(data.data);
+        if (response.success) {
+          setPosts(response.data);
         } else {
           setError('Failed to load blog posts');
         }

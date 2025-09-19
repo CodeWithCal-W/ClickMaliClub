@@ -264,20 +264,23 @@ const Guides = () => {
           {/* Category Filter */}
           <div className="mb-8">
             <div className="flex flex-wrap gap-3 justify-center">
-              {categories.map((category) => (
-                <button
-                  key={category.slug}
-                  onClick={() => setSelectedCategory(category.slug)}
-                  className={`flex items-center space-x-2 px-4 py-2 border-2 rounded-lg transition-colors duration-200 ${
-                    selectedCategory === category.slug
-                      ? 'bg-primary-500 border-primary-500 text-white'
-                      : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-primary-500 hover:text-primary-600 text-gray-700 dark:text-gray-300'
-                  }`}
-                >
-                  <category.icon className="w-4 h-4" />
-                  <span>{category.name}</span>
-                </button>
-              ))}
+              {categories.map((category) => {
+                const IconComponent = category.icon;
+                return (
+                  <button
+                    key={category.slug}
+                    onClick={() => setSelectedCategory(category.slug)}
+                    className={`flex items-center space-x-2 px-4 py-2 border-2 rounded-lg transition-colors duration-200 ${
+                      selectedCategory === category.slug
+                        ? 'bg-primary-500 border-primary-500 text-white'
+                        : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-primary-500 hover:text-primary-600 text-gray-700 dark:text-gray-300'
+                    }`}
+                  >
+                    <IconComponent className="w-4 h-4" />
+                    <span>{category.name}</span>
+                  </button>
+                );
+              })}
             </div>
           </div>
 

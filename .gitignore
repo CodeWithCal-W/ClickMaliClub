@@ -12,13 +12,42 @@ client/dist/
 
 # Environment variables (IMPORTANT - these contain sensitive data)
 .env
+.env.*
 .env.local
+.env.development
 .env.development.local
+.env.test
 .env.test.local
+.env.production
 .env.production.local
 client/.env
+client/.env.*
 server/.env
+server/.env.*
 *.env
+
+# Admin setup files with credentials (SECURITY - do not commit)
+server/src/setupSpecificAdmins.js
+server/src/setupAdmin.js
+**/setupAdmin*.js
+**/admin-credentials.*
+
+# Database and backup files (SECURITY)
+*.db
+*.sqlite
+*.sqlite3
+database.json
+db-backup.*
+mongodb-dump/
+
+# API Keys and secrets (SECURITY)
+secrets.json
+config/secrets.*
+credentials.json
+private-key.*
+*.pem
+*.key
+*.crt
 
 # Logs
 logs

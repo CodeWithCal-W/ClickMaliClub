@@ -1,4 +1,4 @@
-/* App.css - Main application styles */
+/* App.css - Main application styles with enhanced mobile optimizations */
 .App {
   min-height: 100vh;
   display: flex;
@@ -7,6 +7,186 @@
 
 .main-content {
   flex: 1;
+}
+
+/* Mobile-First Responsive Design */
+.mobile-optimized {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Device-Specific Styles */
+.mobile-view {
+  font-size: 16px; /* Prevent zoom on iOS */
+}
+
+.mobile-view input,
+.mobile-view textarea,
+.mobile-view select {
+  font-size: 16px; /* Prevent zoom on form inputs */
+  border-radius: 8px; /* Rounded corners for mobile */
+}
+
+.tablet-view {
+  font-size: 15px;
+}
+
+.desktop-view {
+  font-size: 14px;
+}
+
+/* Touch Optimizations */
+.touch-optimized {
+  -webkit-tap-highlight-color: rgba(54, 179, 126, 0.2);
+  touch-action: manipulation;
+  user-select: none;
+}
+
+/* Enhanced Mobile Button Sizing */
+@media (max-width: 768px) {
+  button, .btn {
+    min-height: 44px; /* Apple's recommended touch target size */
+    min-width: 44px;
+    padding: 12px 16px;
+    font-size: 16px;
+    border-radius: 8px;
+    font-weight: 500;
+  }
+
+  /* Mobile form optimizations */
+  input, textarea, select {
+    min-height: 44px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    transition: border-color 0.2s ease;
+  }
+
+  input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #36b37e;
+    box-shadow: 0 0 0 3px rgba(54, 179, 126, 0.1);
+  }
+
+  /* Mobile card optimizations */
+  .card {
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 16px;
+  }
+
+  /* Mobile navigation spacing */
+  .mobile-nav {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  /* Mobile content padding */
+  .mobile-content {
+    padding: 16px;
+  }
+
+  /* Mobile grid adjustments */
+  .mobile-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
+
+  /* Mobile modal optimizations */
+  .mobile-modal {
+    border-radius: 16px 16px 0 0;
+    max-height: 90vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Mobile table responsive behavior */
+  .mobile-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Mobile admin dashboard adjustments */
+  .admin-mobile {
+    padding-top: 140px; /* Account for mobile header */
+  }
+
+  .admin-mobile .main-content {
+    padding: 16px;
+  }
+  
+  /* Mobile-friendly spacing */
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  /* Better mobile typography */
+  h1 { font-size: 1.875rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+  
+  /* Mobile card adjustments */
+  .deal-card, .category-card {
+    margin-bottom: 16px;
+    padding: 16px;
+  }
+  
+  /* Mobile navigation */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* Tablet Optimizations */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  
+  /* Tablet grid adjustments */
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Landscape Mobile Optimizations */
+@media (max-width: 768px) and (orientation: landscape) {
+  .landscape-adjust {
+    height: 90vh;
+    overflow-y: auto;
+  }
+  
+  /* Adjust header for landscape */
+  .header-mobile {
+    padding: 8px 16px;
+  }
+}
+
+/* Mobile-specific hover states (use active for touch) */
+@media (hover: none) and (pointer: coarse) {
+  .deal-card:hover {
+    transform: none;
+  }
+  
+  .deal-card:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
 }
 
 /* Blog Content Styles */
@@ -94,3 +274,129 @@
 }
 
 /* We'll add more styles after setting up Tailwind */
+
+/* PWA and Mobile App Experience Enhancements */
+@supports (display: standalone) {
+  .pwa-fullscreen {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* Safe area utilities for notched devices */
+.pt-safe {
+  padding-top: calc(1rem + env(safe-area-inset-top));
+}
+
+.pb-safe {
+  padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+}
+
+.pl-safe {
+  padding-left: calc(1rem + env(safe-area-inset-left));
+}
+
+.pr-safe {
+  padding-right: calc(1rem + env(safe-area-inset-right));
+}
+
+/* Mobile app-like animations */
+@media (max-width: 768px) {
+  .mobile-slide-up {
+    animation: slideUpMobile 0.3s ease-out;
+  }
+  
+  .mobile-fade-in {
+    animation: fadeInMobile 0.2s ease-in;
+  }
+}
+
+@keyframes slideUpMobile {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInMobile {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Enhanced mobile scroll behavior */
+.mobile-scroll {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+}
+
+/* Mobile-optimized loading states */
+@media (max-width: 768px) {
+  .loading-skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+  }
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Enhanced touch feedback */
+.touch-feedback {
+  transition: all 0.1s ease;
+}
+
+.touch-feedback:active {
+  transform: scale(0.98);
+  opacity: 0.8;
+}
+
+/* Mobile admin dashboard specific styles */
+@media (max-width: 768px) {
+  .admin-mobile-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  
+  .admin-mobile-content {
+    margin-top: 140px;
+    padding: 16px;
+  }
+  
+  .mobile-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  
+  .mobile-stat-card {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+}

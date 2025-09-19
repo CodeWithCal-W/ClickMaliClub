@@ -56,6 +56,35 @@ const blogPostSchema = new mongoose.Schema({
     keywords: [String],
     ogImage: String
   },
+  // Enhanced SEO fields
+  seoTitle: {
+    type: String,
+    maxlength: 60
+  },
+  seoDescription: {
+    type: String,
+    maxlength: 160
+  },
+  seoKeywords: [String],
+  seoScore: {
+    type: Number,
+    default: 0,
+    min: 0,
+    max: 100
+  },
+  seoChecks: [{
+    type: {
+      type: String,
+      enum: ['success', 'warning', 'error', 'info']
+    },
+    message: String
+  }],
+  priority: {
+    type: Number,
+    default: 0.7,
+    min: 0,
+    max: 1
+  },
   analytics: {
     views: {
       type: Number,

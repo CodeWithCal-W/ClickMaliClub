@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FiArrowRight } from 'react-icons/fi';
+import { ArrowRight } from 'react-feather';
 
 const CategoryCard = ({ category }) => {
   const dealCount = category.dealCount || 0;
@@ -24,7 +24,7 @@ const CategoryCard = ({ category }) => {
             {category.name}
           </h3>
           <div className="text-gray-400 dark:text-gray-500 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-            <FiArrowRight className="w-5 h-5" />
+            <ArrowRight className="w-5 h-5" />
           </div>
         </div>
 

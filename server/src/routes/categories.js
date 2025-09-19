@@ -2,35 +2,20 @@ const express = require('express');
 const router = express.Router();
 const Category = require('../models/Category');
 const Deal = require('../models/Deal');
+const { getOptimizedCategories } = require('../services/optimizedQueries');
 
 // @route   GET /api/categories
-// @desc    Get all active categories with deal counts
+// @desc    Get all active categories with deal counts (optimized)
 // @access  Public
 router.get('/', async (req, res) => {
   try {
-    const categories = await Category.find({ isActive: true })
-      .sort({ sortOrder: 1, name: 1 })
-      .select('-__v');
-
-    // Get deal counts for each category
-    const categoriesWithCounts = await Promise.all(
-      categories.map(async (category) => {
-        const dealCount = await Deal.countDocuments({ 
-          category: category._id, 
-          status: 'active' 
-        });
-        
-        return {
-          ...category.toObject(),
-          dealCount
-        };
-      })
-    );
+    // Use optimized aggregation query
+    const categories = await getOptimizedCategories();
 
     res.json({
       success: true,
-      count: categoriesWithCounts.length,
-      data: categoriesWithCounts
+      count: categories.length,
+      data: categories
     });
   } catch (error) {
     console.error('Error fetching categories:', error);
